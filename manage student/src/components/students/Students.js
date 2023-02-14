@@ -7,8 +7,12 @@ const[students,setStudents]=useState([
     {"id":2,"name":"mohammad","class":201},
     {"id":3,"name":"zahra","class":301},
 ])
-const deletestudent=() => {
-  console.log('delete');
+const deletestudent=(index,p) => {
+  console.log(index);
+  const removestudent=[...students];
+  removestudent.splice(index,1);
+  setStudents(removestudent);
+
 }
 // const astudents=[...students]
     
@@ -24,7 +28,7 @@ const deletestudent=() => {
         <div>
           <h2>salam</h2>
           {[...students].map(item => (
-            <Student item={item} deletestudent={deletestudent}/>
+            <Student key={item.id} item={item} delete={deletestudent}/>
             // <li>{item.nam}</li>
             ))}
         </div>
