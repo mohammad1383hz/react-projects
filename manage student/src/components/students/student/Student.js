@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 const Student=(props)=>{
-    console.log(props);
+    
      return(
         <div>
             <h2>id:{props.item.id}</h2>
