@@ -16,18 +16,18 @@ const deletestudent=(index,p) => {
   const removestudent=[...students];
   removestudent.splice(index,1);
   setStudents(removestudent);
+  alert("delete")
+}
+const updatestudent=(id,updatename,updateclass) => {
+ const s=students.find(x=>x.id==id);
+  console.log(s)
+ 
+}
+const updateclass=(event)=>{
+  const updateClass=event.target.value;
 
 }
-// const astudents=[...students]
-    
-    // return(
-    //     // <h2>{astudents}</h2>
-    //     // {astudents.maps((item,index)=>
-    //     // <Student/>
-    //     // )}
 
-
-    // )
     const createname=(event)=>{
       setName(event.target.value)
     }
@@ -39,6 +39,7 @@ const deletestudent=(index,p) => {
       const newStudent={"id":id,"name":name,"class":classname}
       const Students=[...students,newStudent]
       setStudents(Students)
+      alert("craete student")
       
     }
 
@@ -60,7 +61,7 @@ const deletestudent=(index,p) => {
           
 
           {[...students].map(item => (
-            <Student key={item.id} item={item} delete={deletestudent}/>
+            <Student key={item.id} item={item} delete={deletestudent} update={updatestudent} upclass={updateclass}/>
             // <li>{item.nam}</li>
             ))}
         </div>
